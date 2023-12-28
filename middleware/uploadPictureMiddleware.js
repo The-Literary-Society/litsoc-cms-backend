@@ -13,12 +13,12 @@ const storage = multer.diskStorage({
 const uploadPicture = multer({
   storage: storage,
   limits: {
-    fileSize: 2 * 1000000, // 1MB
+    fileSize: 2 * 1000000, 
   },
   fileFilter: function (req, file, cb) {
     let ext = path.extname(file.originalname);
     if (ext !== ".png" && ext !== ".jpg" && ext !== ".jpeg") {
-      return cb(new Error("Only images are allowed(png, jpg, jpeg)"));
+      return cb(new Error("Only images are allowed"));
     }
     cb(null, true);
   },
