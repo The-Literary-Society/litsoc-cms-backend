@@ -1,13 +1,12 @@
 import express from "express";
-const router = express.Router();
 import {
   createPostCategory,
   deletePostCategory,
   getAllPostCategories,
   updatePostCategory,
-} from "../controllers/postCategoriesController";
+} from "../controllers/postCategoriesControllers";
 import { adminGuard, authGuard } from "../middleware/authMiddleware";
-
+const router = express.Router();
 router
   .route("/")
   .post(authGuard, adminGuard, createPostCategory)

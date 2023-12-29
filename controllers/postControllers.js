@@ -30,7 +30,7 @@ const updatePost = async (req, res, next) => {
     const post = await Post.findOne({ slug: req.params.slug });
 
     if (!post) {
-      const error = new Error("Post aws not found");
+      const error = new Error("Post was not found");
       next(error);
       return;
     }
@@ -52,7 +52,7 @@ const updatePost = async (req, res, next) => {
     upload(req, res, async function (err) {
       if (err) {
         const error = new Error(
-          "An unknown error occured when uploading " + err.message
+          "An unknown error occurred when uploading " + err.message
         );
         next(error);
       } else {
