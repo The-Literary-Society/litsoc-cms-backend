@@ -18,7 +18,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://litsocvssut.netlify.app/',
+  origin: 'https://litsocvssut.netlify.app',
 }));
 
 app.get("/", (req, res) => {
